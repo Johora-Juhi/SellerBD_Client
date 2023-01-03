@@ -1,0 +1,17 @@
+[
+    {
+        "categoryId": "01",
+        "categoryName": "Mobile",
+        "categoryImage": "https://i.ibb.co/gJHbJwW/Mobile-Cat-01.jpg"
+    },
+    {
+        "categoryId": "02",
+        "categoryName": "Tablet",
+        "categoryImage": "https://i.ibb.co/jMJhbtr/Tab-Cat-01.jpg"
+    },
+    {
+        "categoryId": "03",
+        "categoryName": "Tablet",
+        "categoryImage": "https://i.ibb.co/TWXBnYm/Laptop-Cat-01.jpg"
+    }
+]

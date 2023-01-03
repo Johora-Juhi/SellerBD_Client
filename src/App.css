@@ -1,4 +1,13 @@
 .App {
-  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+.myBtn{
+  background-image:  linear-gradient(to left, #ffbe44, rgb(255, 161, 20));
+  padding: 15px 25px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #fff;
+  transition: .4s;
 }
 

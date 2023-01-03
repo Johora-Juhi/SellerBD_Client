@@ -1,0 +1,39 @@
+.bannerBack {
+    background: rgba(0, 0, 0, 0.85) url('../../../assets/images/home/bannerBack.jpg');
+    background-blend-mode: darken;
+    padding: 150px 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Questrial', sans-serif;
+}
+
+.rainbow-text {
+    background-image: linear-gradient(to left, rgb(255, 235, 170), rgb(255, 171, 62), rgb(251, 255, 22));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.myBtn{
+    background-image:  linear-gradient(to left, #ffbe44, rgb(255, 161, 20));
+    padding: 15px 25px;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #fff;
+    transition: .4s;
+}
+.myBtn:hover{
+    letter-spacing: 5px;
+}
+
+.helloImage{
+    transition: 1.5s;
+}
+
+.helloImage:hover{
+    transform: translateY(-30px);
+}
