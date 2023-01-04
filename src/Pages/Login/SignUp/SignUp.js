@@ -45,12 +45,12 @@ const SignUp = () => {
 
                         const userInfo = {
                             displayName: data.name,
-                            photoURL: data.photoURL
+                            photoURL: imgData.data.url
                         }
                         updateUser(userInfo)
                             .then(() => { })
                             .catch(error => console.log(error))
-                        saveUser(data.name, data.email, data.photoURL, data.role);
+                        saveUser(data.name, data.email, imgData.data.url, data.role);
                         console.log(user);
                     })
 
@@ -62,7 +62,7 @@ const SignUp = () => {
 
     const saveUser = (name, email, photo, role) => {
             const user = { name, email, photo, role };
-            fetch('/users', {
+            fetch('http://localhost:5000/users', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'
@@ -106,15 +106,13 @@ const SignUp = () => {
                     })} type="email" placeholder="email" className="input input-bordered" />
                     {errors.email && <p className='text-red-500'>{errors.email?.message}</p>}
                 </div>
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Photo</span>
-                    </label>
-                    <input {...register("image", {
-                        required: "Photo is required"
-                    })} type="name" placeholder="phptoURL" className="input input-bordered" />
-                    {errors.name && <p className='text-red-500'>{errors.name?.message}</p>}
-                </div>
+                <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text">Image</span>
+                            </label>
+                            <input type="file" className="file-input file-input-bordered w-full"
+                                {...register("image", { required: true })} />
+                        </div>
                 {signupError &&
                     <label className="label">
                         <span className="label-text text-red-500">{signupError}</span>

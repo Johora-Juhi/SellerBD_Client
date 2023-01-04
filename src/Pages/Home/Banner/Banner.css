@@ -1,7 +1,7 @@
 .bannerBack {
     background: rgba(0, 0, 0, 0.85) url('../../../assets/images/home/bannerBack.jpg');
     background-blend-mode: darken;
-    padding: 150px 0;
+    padding: 0 0 150px 0;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

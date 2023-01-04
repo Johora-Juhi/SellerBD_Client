@@ -1,0 +1,18 @@
+.proBanner {
+    background: rgba(0, 0, 0, 0.70) url(../../../assets/images/productsBanner.jpg);
+    background-blend-mode: darken;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.wave{
+    margin-top: -330px;
+}
+.font{
+    font-family: 'Dancing Script', cursive;
+}

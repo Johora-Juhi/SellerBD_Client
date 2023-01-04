@@ -1,17 +1,20 @@
 import React from 'react';
 import './Banner.css';
 import mobileImage from '../../../assets/images/home/bannerImage.png';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 const Banner = () => {
     return (
         <>
             <div className='bannerBack'>
-                <div className="container mx-auto px-20">
+            <Navbar></Navbar>
+
+                <div className="container mx-auto pt-36 px-20">
                     <div className="grid grid-cols-2 gap-4 items-center">
                         <div>
-                            <h1 className='rainbow-text'>WELCOME TO SELLER BD</h1>
+                            <h1 className='rainbow-text animate__animated animate__fadeInDown'>WELCOME TO SELLER BD</h1>
                             <h2 className='text-white font-semibold text-7xl my-7 tracking-wider'>Bringing Your Gadgets Back to Life</h2>
-                            <button className="myBtn mt-5">GET STARTED ➔</button>
+                            <button className="myBtn mt-5 animate__animated animate__backInLeft">GET STARTED ➔</button>
                         </div>
                         <div>
                             <img className='w-3/4 helloImage' src={mobileImage} alt="" />
