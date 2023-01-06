@@ -78,7 +78,7 @@ const ProductsCard = ({ product, setAvailabeProducts }) => {
         <figure className="px-10 pb-3 pt-10 hover bg-slate-100">
           <img src={image} alt="Shoes" className="rounded-xl w-3/4 mx-auto" />
           <div class=" overlay">
-          <Link to={`/productDetails/${_id}`}  className="middle btn btn-outline uppercase rounded-none">View Details</Link>
+          <Link state={product} to={`/productDetails/${_id}`}  className="middle btn btn-outline uppercase rounded-none">View Details</Link>
   </div>
         </figure>
         <div className="card-body items-center text-center">
