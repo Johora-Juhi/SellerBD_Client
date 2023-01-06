@@ -5,14 +5,13 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
-import useTitle from '../../../hooks/useTitle';
+
 
 const AddProduct = () => {
-    useTitle('Add Product');
-
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
+    console.log(user);
 
     const currnetYear = new Date().getFullYear();
     const today = format(new Date(), 'PP')
@@ -44,6 +43,7 @@ const AddProduct = () => {
                 const product = {
                     sellerName: user.displayName,
                     email: user.email,
+                    sellerImg: user.photoURL,
                     name: data.productName,
                     conditionType: data.condition,
                     sellerPhone: data.mobile,
@@ -55,7 +55,15 @@ const AddProduct = () => {
                     description: data.description,
                     image: imgData.data.url,
                     yearsUsed: currnetYear - data.yearOfPurchase,
-                    postTime: today
+                    postTime: today,
+                    ramRom: data.ramRom,
+                    sim: data.sim,
+                    screenSize: data.screenSize,
+                    camera: data.camera,
+                    processor: data.processor,
+                    scratchStatus: data.scratchStatus,
+                    batteryHealth: data.batteryHealth,
+                    connectivityIssue: data.connectivityIssue
                 }
 
                 fetch('http://localhost:5000/categories', {
@@ -139,7 +147,7 @@ const AddProduct = () => {
                         </div>
                         <div className="form-control  w-full mb-2">
                             <label className="label">
-                                <span className="label-text">Guitar Type</span>
+                                <span className="label-text">Product Type</span>
                             </label>
                             <select {...register("categoryId", {
                                 required: "Phone type is required"
@@ -225,17 +233,77 @@ const AddProduct = () => {
                                 {...register("image", { required: true })} />
                         </div>
                     </div>
-
-                    <div className="form-control">
+                  <div className='grid grid-cols-2 gap-4'>
+                  <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Description</span>
+                            <span className="label-text">Ram | Rom</span>
                         </label>
-                        <textarea className="textarea textarea-bordered h-24"  {...register("description", {
-                            required: "Please Enter your product description"
-                        })}></textarea>
+                        <textarea className="textarea textarea-bordered h-12"  {...register("ramRom", {
+                                required: "Please Enter your product description"
+                            })}></textarea>
                         {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
-
                     </div>
+                  <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Processor</span>
+                        </label>
+                        <textarea className="textarea textarea-bordered h-12"  {...register("processor", {
+                                required: "Please Enter your product description"
+                            })}></textarea>
+                        {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
+                  </div>
+                  <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Camera</span>
+                        </label>
+                        <textarea className="textarea textarea-bordered h-12"  {...register("camera", {
+                                required: "Please Enter your product description"
+                            })}></textarea>
+                        {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
+                    </div>
+                  <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Sim</span>
+                        </label>
+                        <textarea className="textarea textarea-bordered h-12"  {...register("sim")}></textarea>
+                        {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
+                    </div>
+                  <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Screen</span>
+                        </label>
+                        <textarea className="textarea textarea-bordered h-12"  {...register("screenSize")}></textarea>
+                        {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
+                    </div>
+                  <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Scratch</span>
+                        </label>
+                        <textarea className="textarea textarea-bordered h-12"  {...register("scratchStatus", {
+                                required: "Please Enter your product description"
+                            })}></textarea>
+                        {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
+                    </div>
+                  <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Connectivity Issue</span>
+                        </label>
+                        <textarea className="textarea textarea-bordered h-12"  {...register("connectivityIssue", {
+                                required: "Please Enter your product description"
+                            })}></textarea>
+                        {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
+                    </div>
+                  <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Battery Health</span>
+                        </label>
+                        <textarea className="textarea textarea-bordered h-12"  {...register("batteryHealth", {
+                                required: "Please Enter your product description"
+                            })}></textarea>
+                        {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
+                    </div>
+
+                  </div>
 
                     <input className='btn btn-primary rounded-none text-white my-5' value="Add Product" type="submit" />
                 </form>

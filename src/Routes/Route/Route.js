@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../../layouts/DashboardLayout/DashboardLayout";
 import Main from "../../layouts/Main/Main";
+import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
+import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
 import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
@@ -13,6 +15,7 @@ import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import BuyerRoute from "../BuyerRoute/BuyerRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import SellerRoute from "../SellerRoute/SellerRoute";
 
 const router = createBrowserRouter([
     {
@@ -73,14 +76,14 @@ const router = createBrowserRouter([
                 path: '/dashboard/reportedItems',
                 element: <AdminRoute><ReportedItems></ReportedItems></AdminRoute>
             },
-            // {
-            //     path: '/dashboard/addProducts',
-            //     element: <SellerRoute><AddProduct></AddProduct></SellerRoute>
-            // },
-            // {
-            //     path: '/dashboard/myProducts',
-            //     element: <SellerRoute><MyProducts></MyProducts></SellerRoute>
-            // },
+            {
+                path: '/dashboard/addProducts',
+                element: <SellerRoute><AddProduct></AddProduct></SellerRoute>
+            },
+            {
+                path: '/dashboard/myProducts',
+                element: <SellerRoute><MyProducts></MyProducts></SellerRoute>
+            },
         ]
     }
 ])

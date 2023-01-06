@@ -20,47 +20,47 @@ const ProductDetails = () => {
                         <div className='border-r-2 border-gray-300 pr-5'>
                             {
                                 product.ramRom &&
-                             <>
-                                <h3 className='text-sm text-gray-500'>RAM | ROM</h3>
-                                <h4 className='font-semibold'>{product.ramRom}</h4></>
+                                <>
+                                    <h3 className='text-sm text-gray-500'>RAM | ROM</h3>
+                                    <h4 className='font-semibold'>{product.ramRom}</h4></>
                             }
                         </div>
                         <div className='border-r-2 border-gray-300 px-5'>
                             {
                                 product.processor &&
-                               <>
-                                <h3 className='text-sm text-gray-500'>Processor</h3>
-                               <h4 className='font-semibold'>{product.processor}</h4></>
+                                <>
+                                    <h3 className='text-sm text-gray-500'>Processor</h3>
+                                    <h4 className='font-semibold'>{product.processor}</h4></>
                             }
                         </div>
                         <div className='border-r-2 border-gray-300 px-5'>
                             {
-product.camera &&
+                                product.camera &&
                                 <>
-                                <h3 className='text-sm text-gray-500'>Camera</h3>
-                                <h4 className='font-semibold'>{product.camera}</h4>
+                                    <h3 className='text-sm text-gray-500'>Camera</h3>
+                                    <h4 className='font-semibold'>{product.camera}</h4>
                                 </>
                             }
                         </div>
-                        
-                            {
-product.sim &&
-<div className='px-5'>
+
+                        {
+                            product.sim &&
+                            <div className='px-5'>
                                 <h3 className='text-sm text-gray-500'>Sim</h3>
-                            <h4 className='font-semibold'>{product.sim}</h4>
+                                <h4 className='font-semibold'>{product.sim}</h4>
                             </div>
-                            }
-                        
-                            {
-product.screenSize &&
-                            
-                                <div className='px-5'>
+                        }
+
+                        {
+                            product.screenSize &&
+
+                            <div className='px-5'>
                                 <h3 className='text-sm text-gray-500'>Screen</h3>
-                            <h4 className='font-semibold'>{product.screenSize}</h4>
+                                <h4 className='font-semibold'>{product.screenSize}</h4>
                             </div>
-                           
-                            }
-                        
+
+                        }
+
                     </div>
                     <h2 className='font-semibold mt-10 mb-3 text-xl'>Condition</h2>
                     <div className='flex'>
@@ -70,18 +70,18 @@ product.screenSize &&
                         </div>
                         <div className='border-r-2 border-gray-300 px-5'>
                             {
-                                product.scratchStatus && 
+                                product.scratchStatus &&
                                 <>
-                                <h3 className='text-sm text-gray-500'>Scratch</h3>
-                            <h4 className='font-semibold'>{product.scratchStatus}</h4></>
+                                    <h3 className='text-sm text-gray-500'>Scratch</h3>
+                                    <h4 className='font-semibold'>{product.scratchStatus}</h4></>
                             }
                         </div>
                         <div className='px-5'>
                             {
-product.connectivityIssue &&
+                                product.connectivityIssue &&
                                 <>
-                                <h3 className='text-sm text-gray-500'>Connectivity Issue</h3>
-                            <h4 className='font-semibold'>{product.connectivityIssue}</h4></>
+                                    <h3 className='text-sm text-gray-500'>Connectivity Issue</h3>
+                                    <h4 className='font-semibold'>{product.connectivityIssue}</h4></>
                             }
                         </div>
                     </div>
