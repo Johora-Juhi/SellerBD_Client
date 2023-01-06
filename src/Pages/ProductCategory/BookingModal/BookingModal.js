@@ -17,6 +17,7 @@ const BookingModal = ({ avaiableProducts, setAvailabeProducts }) => {
         const order = {
             productId: _id,
             productName: name,
+
             image,
             price: resalePrice,
             buyerName,
@@ -25,7 +26,7 @@ const BookingModal = ({ avaiableProducts, setAvailabeProducts }) => {
             location
         }
 
-        fetch('https://assignment-twelve-server-six.vercel.app/orders', {
+        fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

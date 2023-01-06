@@ -14,7 +14,7 @@ const DashboardLayout = () => {
     const [isBuyer] = useBuyer(user?.email);
     return (
         <div>
-            <Navbar></Navbar>
+            <div className='bg-black'><Navbar></Navbar></div>
             <div className="drawer drawer-mobile">
                 <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content">
