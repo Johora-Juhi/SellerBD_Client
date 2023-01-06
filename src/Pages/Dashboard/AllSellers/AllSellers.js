@@ -11,7 +11,7 @@ const AllSellers = () => {
     const { data: sellers = [], refetch } = useQuery({
         queryKey: ['sellers'],
         queryFn: async () => {
-            const res = await fetch('https://assignment-twelve-server-six.vercel.app/users/sellers', {
+            const res = await fetch('http://localhost:5000/users/sellers', {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 }
@@ -21,7 +21,7 @@ const AllSellers = () => {
         }
     });
     const handleVarifySeller = seller => {
-        fetch(`https://assignment-twelve-server-six.vercel.app/users/sellers`, {
+        fetch(`http://localhost:5000/users/sellers`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -49,7 +49,7 @@ const AllSellers = () => {
         setDeletingSeller(null);
     }
     const handleDetetingSeller = seller => {
-        fetch(`https://assignment-twelve-server-six.vercel.app/users/sellers/${seller._id}`, {
+        fetch(`http://localhost:5000/users/sellers/${seller._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

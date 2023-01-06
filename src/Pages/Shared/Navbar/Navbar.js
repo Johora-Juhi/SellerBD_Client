@@ -7,7 +7,7 @@ const Navbar = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('https://assignment-twelve-server-six.vercel.app/categoriesType')
+        fetch('http://localhost:5000/categoriesType')
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -40,8 +40,8 @@ const Navbar = () => {
             // : <li><Link className='btn btn-primary text-white mr-0 lg:mr-4' to='/login'>Login</Link></li>
         }
     </React.Fragment>
-    const login=<>
-     {user?.uid ?
+    const login = <>
+        {user?.uid ?
             <>
                 {/* <li><Link to='/dashboard'>Dashboard</Link></li> */}
                 <li><button className='btn btn-error btn-outline mr-0 lg:mr-4 shadow-inner' onClick={handleLogOut} to='/signout'>Sign Out</button></li>

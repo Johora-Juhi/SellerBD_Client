@@ -1,19 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
-import useTitle from '../../../hooks/useTitle';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 import Loading from '../../Shared/Loading/Loading';
 
 const ReportedItems = () => {
-    useTitle('Reported Items');
-
     const [deletingProduct, setDeletingProduct] = useState(null);
     const closeModal = () => {
         setDeletingProduct(null);
     }
     const handleDetetingProduct = product => {
-        fetch(`https://assignment-twelve-server-six.vercel.app/reportedproduct/${product._id}`, {
+        fetch(`http://localhost:5000/reportedproduct/${product._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -35,7 +32,7 @@ const ReportedItems = () => {
     }
 
 
-    const url = `https://assignment-twelve-server-six.vercel.app/showReports`;
+    const url = `http://localhost:5000/showReports`;
 
     const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ['products'],

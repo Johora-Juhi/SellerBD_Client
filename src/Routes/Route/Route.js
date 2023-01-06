@@ -3,24 +3,26 @@ import DashboardLayout from "../../layouts/DashboardLayout/DashboardLayout";
 import Main from "../../layouts/Main/Main";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
+import ReportedItems from "../../Pages/Dashboard/ReportedItems/ReportedItems";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import SignUp from "../../Pages/Login/SignUp/SignUp";
 import ProductCategory from "../../Pages/ProductCategory/ProductCategory/ProductCategory";
 import ProductDetails from "../../Pages/ProductCategory/ProductDetails/ProductDetails";
 import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
+import AdminRoute from "../AdminRoute/AdminRoute";
 import BuyerRoute from "../BuyerRoute/BuyerRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
-        path:'/',
-        element:<Main></Main>,
+        path: '/',
+        element: <Main></Main>,
         errorElement: <DisplayError></DisplayError>,
         children: [
             {
-                path:'/',
-                element:<Home></Home>
+                path: '/',
+                element: <Home></Home>
             },
             {
                 path: '/category/:id',
@@ -28,12 +30,12 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
             },
             {
-                path:'/productDetails/:id',
-                element:<ProductDetails></ProductDetails>
+                path: '/productDetails/:id',
+                element: <ProductDetails></ProductDetails>
             },
             {
-                path:'/login',
-                element:<Login></Login>
+                path: '/login',
+                element: <Login></Login>
             },
             {
                 path: '/signup',
@@ -57,7 +59,7 @@ const router = createBrowserRouter([
             // // {
             // //     path: '/dashboard/payment/:id',
             // //     element: <MakePayment></MakePayment>,
-            // //     loader: ({ params }) => fetch(`https://assignment-twelve-server-six.vercel.app/myorders/${params.id}`)
+            // //     loader: ({ params }) => fetch(`http://localhost:5000/myorders/${params.id}`)
             // // },
             // {
             //     path: '/dashboard/allsellers',
@@ -67,10 +69,10 @@ const router = createBrowserRouter([
             //     path: '/dashboard/allbuyers',
             //     element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
             // },
-            // {
-            //     path: '/dashboard/reportedItems',
-            //     element: <AdminRoute><ReportedItems></ReportedItems></AdminRoute>
-            // },
+            {
+                path: '/dashboard/reportedItems',
+                element: <AdminRoute><ReportedItems></ReportedItems></AdminRoute>
+            },
             // {
             //     path: '/dashboard/addProducts',
             //     element: <SellerRoute><AddProduct></AddProduct></SellerRoute>
