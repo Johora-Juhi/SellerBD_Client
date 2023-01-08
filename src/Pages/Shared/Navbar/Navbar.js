@@ -21,17 +21,18 @@ const Navbar = () => {
     }
     const menuItems = <React.Fragment>
         <li><Link to='/'>Home</Link></li>
-        <li tabIndex={0}>
+        {/* <li tabIndex={0}>
             <Link className="justify-between">
                 Categories
                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-            </Link>
+            </Link> */}
             {/* <ul className="p-2 z-30">
                 {categories.map(category => <li key={category._id}><Link to={`category/${category.categoryId}`}>{category.categoryName}</Link></li>
                 )}
             </ul> */}
-        </li>
-        <li><Link to='/blogs'>Blogs</Link></li>
+        {/* </li> */}
+        <li><Link to='/about'>About</Link></li>
+        <li><Link to='/contact'>Contact</Link></li>
         {user?.uid &&
             <>
                 <li><Link to='/dashboard'>Dashboard</Link></li>

@@ -6,7 +6,7 @@ import './HomeCategories.css'
 
 const HomeCategories = () => {
     return (
-        <div className=''>
+        <div >
             <div className="container mx-auto px-20 py-32">
                 <h1 className='text-4xl font-semibold text-center'>Categories</h1>
                 <div className="flex gap-5 space-between">
@@ -14,10 +14,10 @@ const HomeCategories = () => {
                         <FaMobileAlt className='text-5xl'></FaMobileAlt>
                     </div>
                     <div className='catIcon flex justify-center items-center mx-auto'>
-                        <FaMobileAlt className='text-5xl'></FaMobileAlt>
+                        <FaTabletAlt className='text-5xl'></FaTabletAlt>
                     </div>
                     <div className='catIcon flex justify-center items-center mx-auto'>
-                        <FaMobileAlt className='text-5xl'></FaMobileAlt>
+                        <FaLaptop className='text-5xl'></FaLaptop>
                     </div>
                 </div>
             </div>

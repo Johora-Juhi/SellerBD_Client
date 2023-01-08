@@ -103,7 +103,10 @@ const ProductDetails = () => {
                         <div className='flex justify-evenly items-center'>
                             <img style={{ width: '100px' }} className="rounded-full" src={sellerImg} alt="" />
                             <div>
-                                <h2 className='font-semibold mb-2'>{sellerName}</h2>
+                            <div className='flex gap-2 justify-center lg:justify-start items-center'>
+                                <p className='font-bold'>{sellerName}</p>
+                                {product.verified && <p className='text-blue-500 text-xl font-bold'>✔</p>}
+                            </div>
                                 <h2 className='text-gray-500 text-xs mb-1'>Email: {email}</h2>
                                 <h2 className='text-gray-500 text-xs mb-1'>Phone: {sellerPhone}</h2>
                                 <h2 className='text-gray-500 text-xs'>Location: {sellerLocation}</h2>

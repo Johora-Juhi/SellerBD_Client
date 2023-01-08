@@ -44,45 +44,12 @@ const Login = () => {
             })
     }
 
-    // const handleGoogleSignIn = () => {
-
-    //     googleLogin()
-    //         .then(result => {
-    //             const user = result.user;
-    //             console.log(user);
-    //             const role = "buyer";
-    //             saveUser(user.displayName, user.email, role);
-    //         })
-    //         .catch(error => console.error('error', error))
-    // }
-
-
-    // const saveUser = (name, email, role) => {
-    //     setLoginUserEmail('');
-    //     const user = { name, email, role };
-    //     console.log(user);
-    //     fetch('http://localhost:5000/users', {
-    //         method: 'POST',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(user)
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setLoginUserEmail(email);
-    //             console.log(data);
-    //         })
-    // }
     return (
-        <div className="card flex w-full lg:w-1/2 mx-auto shadow-inner lg:shadow-2xl my-8 bg-base-100 flex-col lg:flex-row">
-            <div className='relative hidden lg:block w-1/2'>
-                <img src={login} alt="" />
-                <h3 className='absolute top-1/2 left-36 w-1/4 text-xl font-bold text-center'>Now, you are waiting for your login!</h3>
-            </div>
-            <div className="card-body justify-center">
+       
+            <div className="mt-20 px-12 py-20 shadow-lg lg:w-1/4 mx-auto justify-center border border-primary rounded-lg">
                 <form onSubmit={handleSubmit(handleLogin)} >
-                    <h1 className="text-3xl font-bold text-center text-primary mb-5">Login</h1>
+                    <h1 className="text-3xl font-bold text-center text-primary mb-3">Please Login</h1>
+                    <p className='text-sm text-gray-500 text-center mb-5'>We will not share your information</p>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
@@ -116,7 +83,6 @@ const Login = () => {
                 {/* <div className="divider">OR</div>
                 <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary">CONTINUE WITH GOOGLE</button> */}
             </div>
-        </div>
     );
 };
 

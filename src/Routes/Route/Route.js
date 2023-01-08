@@ -1,7 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../../layouts/DashboardLayout/DashboardLayout";
 import Main from "../../layouts/Main/Main";
+import About from "../../Pages/About/About/About";
+import Contact from "../../Pages/Contact/Contact";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
+import AllBuyers from "../../Pages/Dashboard/AllBuyers/AllBuyers";
+import AllSellers from "../../Pages/Dashboard/AllSellers/AllSellers";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
 import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
@@ -36,16 +40,27 @@ const router = createBrowserRouter([
                 path: '/productDetails/:id',
                 element: <ProductDetails></ProductDetails>
             },
+            
             {
-                path: '/login',
-                element: <Login></Login>
+                path: '/about',
+                element: <About></About>
             },
             {
-                path: '/signup',
-                element: <SignUp></SignUp>
+                path: '/contact',
+                element: <Contact></Contact>
             },
         ]
     },
+    
+        {
+            path: '/login',
+            element: <Login></Login>
+        },
+        {
+            path: '/signup',
+            element: <SignUp></SignUp>
+        },
+    
     {
         path: '/dashboard',
         element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
@@ -64,14 +79,14 @@ const router = createBrowserRouter([
             // //     element: <MakePayment></MakePayment>,
             // //     loader: ({ params }) => fetch(`http://localhost:5000/myorders/${params.id}`)
             // // },
-            // {
-            //     path: '/dashboard/allsellers',
-            //     element: <AdminRoute><AllSellers></AllSellers></AdminRoute>
-            // },
-            // {
-            //     path: '/dashboard/allbuyers',
-            //     element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
-            // },
+            {
+                path: '/dashboard/allsellers',
+                element: <AdminRoute><AllSellers></AllSellers></AdminRoute>
+            },
+            {
+                path: '/dashboard/allbuyers',
+                element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
+            },
             {
                 path: '/dashboard/reportedItems',
                 element: <AdminRoute><ReportedItems></ReportedItems></AdminRoute>

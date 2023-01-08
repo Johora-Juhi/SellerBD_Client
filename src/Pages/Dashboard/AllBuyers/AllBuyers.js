@@ -1,12 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
-import useTitle from '../../../hooks/useTitle';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 
 const AllBuyers = () => {
-    useTitle('All Buyers');
-
     const [deletingBuyer, setDeletingBuyer] = useState(null)
     const { data: buyers = [], refetch } = useQuery({
         queryKey: ['buyers'],
@@ -56,6 +53,7 @@ const AllBuyers = () => {
                     <thead>
                         <tr>
                             <th></th>
+                            <th>Avatar</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
@@ -67,6 +65,7 @@ const AllBuyers = () => {
                             buyers.map((buyer, i) =>
                                 <tr key={buyer._id} className="hover">
                                     <th>{i + 1}</th>
+                                    <td ><img src={buyer.photo} className='w-16 rounded-full' alt="" /></td>
                                     <td>{buyer.name}</td>
                                     <td>{buyer.email}</td>
                                     <td>{buyer.role}</td>

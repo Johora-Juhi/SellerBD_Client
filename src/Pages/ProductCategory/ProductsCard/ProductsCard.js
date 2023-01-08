@@ -82,7 +82,8 @@ const ProductsCard = ({ product, setAvailabeProducts }) => {
                 </div>
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title">{name}</h2>
+                <div className='flex gap-2 justify-center lg:justify-start items-center'><h2 className="card-title">{name}</h2>
+                {product.verified && <p className='text-blue-500 text-xl font-bold'>✔</p>}</div>
                 <h5 className='text-center mt-1 mb-5'><span className='text-center mr-1 font-semibold'>৳ {resalePrice}</span> <span className='text-gray-500' style={{ textDecoration: 'line-through' }}>৳ {originalPrice}</span> </h5>
                 <div className="card-actions">
                     <label onClick={() => setAvailabeProducts(product)} htmlFor="order-modal" className="btn rounded-none btn-outline">Book Now</label>

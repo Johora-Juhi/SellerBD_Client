@@ -1,6 +1,7 @@
 import React from 'react';
+import AdvertiseItem from '../AdvertiseItem/AdvertiseItem/AdvertiseItem';
 import Banner from '../Banner/Banner';
-import Copyright from '../Copyright/Copyright';
+// import Copyright from '../Copyright/Copyright';
 import CustomerLove from '../CustomerLove/CustomerLove';
 import FeatureProduct from '../FeatureProduct/FeatureProduct';
 import HomeAboutSection from '../HomeAboutSection/HomeAboutSection';
@@ -13,10 +14,11 @@ const Home = () => {
             <Banner></Banner>
             <HomeAboutSection></HomeAboutSection>
             <ProductCategories></ProductCategories>
+            <AdvertiseItem></AdvertiseItem>
             <UpComming></UpComming>
             <FeatureProduct></FeatureProduct>
             <CustomerLove></CustomerLove>
-            <Copyright></Copyright>
+            {/* <Copyright></Copyright> */}
         </div>
     );
 };

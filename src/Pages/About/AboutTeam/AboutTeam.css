@@ -1,0 +1,8 @@
+.rainbow-text {
+    background-image: linear-gradient(to left, rgb(255, 171, 62), rgb(251, 255, 22));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}

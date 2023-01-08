@@ -74,7 +74,7 @@ const MyProducts = () => {
         <Loading></Loading>
     }
     return (
-        <div className='bg-blue-50 p-8'>
+        <div className='bg-blue-50 p-8 my-5'>
             <div>
                 <h1 className='text-xl font-bold'>Manage Products: {products?.length}</h1>
             </div>
@@ -87,7 +87,7 @@ const MyProducts = () => {
                             <th>Product Name</th>
                             <th>Price</th>
                             <th>Condition</th>
-                            <th>Sales Status</th>
+                            {/* <th>Sales Status</th> */}
                             <th>Advertise</th>
                             <th>Remove</th>
                         </tr>
@@ -100,7 +100,7 @@ const MyProducts = () => {
                                     <td>{product.name}</td>
                                     <td>{product.resalePrice}</td>
                                     <td>{product.conditionType}</td>
-                                    <td>
+                                    {/* <td>
                                         {
                                             product.resalePrice && !product.paid &&
                                             <p>Avaiable</p>
@@ -109,7 +109,7 @@ const MyProducts = () => {
                                             product.resalePrice && product.paid &&
                                             <p>Sold</p>
                                         }
-                                    </td>
+                                    </td> */}
                                     <td>
                                         {<button onClick={() => handleAdvertise(product._id)} className="btn btn-xs btn-outline btn-primary" disabled={product.advertise}>Advertise</button>}
                                     </td>

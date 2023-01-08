@@ -81,12 +81,12 @@ const SignUp = () => {
 
 
     return (
-        <div className="card flex w-full lg:w-1/2 mx-auto shadow-inner lg:shadow-2xl my-8 bg-base-100 flex-col lg:flex-row">
-            <div className='relative hidden lg:block w-1/2'>
+        <div className="mt-20 p-12 shadow-lg lg:w-1/3 mx-auto justify-center border border-primary rounded-lg">
+            {/* <div className='relative hidden lg:block w-1/2'>
                 <img src={login} alt="" />
                 <h3 className='absolute bottom-36 left-36 w-1/4 text-xl font-bold text-center'>Now, you are waiting to create a new account!</h3>
-            </div>
-            <form onSubmit={handleSubmit(handleSignUp)} className="card-body">
+            </div> */}
+            <form onSubmit={handleSubmit(handleSignUp)} className="">
                 <h1 className="text-3xl font-bold text-center text-primary">Sign Up</h1>
                 <div className="form-control">
                     <label className="label">
@@ -97,6 +97,13 @@ const SignUp = () => {
                     })} type="name" placeholder="name" className="input input-bordered" />
                     {errors.name && <p className='text-red-500'>{errors.name?.message}</p>}
                 </div>
+                <div className="form-control w-full">
+                            <label className="label">
+                                <span className="label-text">Image</span>
+                            </label>
+                            <input type="file" className="file-input file-input-bordered w-full"
+                                {...register("image", { required: true })} />
+                        </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text">Email</span>
@@ -106,13 +113,6 @@ const SignUp = () => {
                     })} type="email" placeholder="email" className="input input-bordered" />
                     {errors.email && <p className='text-red-500'>{errors.email?.message}</p>}
                 </div>
-                <div className="form-control w-full">
-                            <label className="label">
-                                <span className="label-text">Image</span>
-                            </label>
-                            <input type="file" className="file-input file-input-bordered w-full"
-                                {...register("image", { required: true })} />
-                        </div>
                 {signupError &&
                     <label className="label">
                         <span className="label-text text-red-500">{signupError}</span>
@@ -133,7 +133,7 @@ const SignUp = () => {
                     <label className="label">
                         <span className="label-text">Role</span>
                     </label>
-                    <select className="select select-bordered w-full max-w-xs"
+                    <select className="select select-bordered w-full"
                         {...register("role", {
                             required: true
                         })}
@@ -142,7 +142,7 @@ const SignUp = () => {
                         <option value="seller">Seller</option>
                     </select>
                 </div>
-                <div className="form-control mt-2">
+                <div className="form-control mt-6">
                     <button className="btn btn-primary text-white">SignUp</button>
                 </div>
                 <p className='text-center'>Already have an account? <Link to='/login' className='text-primary font-bold'>Please Login</Link></p>

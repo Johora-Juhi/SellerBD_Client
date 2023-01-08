@@ -3,6 +3,7 @@ import './FeatureProduct.css';
 import f1 from '../../../assets/images/home/f1.png';
 import f2 from '../../../assets/images/home/f2.png';
 import f3 from '../../../assets/images/home/f3.png';
+import { HashLink } from 'react-router-hash-link';
 
 const FeatureProduct = () => {
     return (
@@ -27,7 +28,7 @@ const FeatureProduct = () => {
                     </div>
                 </div>
                 <div className='text-center mt-20'>
-                    <button className='myBtn'>SEE ALL PRODUCTS</button>
+                    <HashLink smooth to='#categories' className='myBtn'>SEE ALL PRODUCTS</HashLink>
                 </div>
             </div>
         </div>
