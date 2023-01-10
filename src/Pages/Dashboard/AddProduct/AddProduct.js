@@ -15,7 +15,7 @@ const AddProduct = () => {
 
     const currnetYear = new Date().getFullYear();
     const today = format(new Date(), 'PP')
-    const imageHostKey = process.env.REACT_APP_imgbb_Key;
+    const imageHostKey =  "06a96b9d2399d36d63a76b7bd976bf8b";
 
     const { data: categories = [] } = useQuery({
         queryKey: ['categories'],
@@ -200,17 +200,6 @@ const AddProduct = () => {
                                     required: true
                                 })}
                             >
-                                <option value="2000">2000</option>
-                                <option value="2001">2001</option>
-                                <option value="2002">2002</option>
-                                <option value="2003">2003</option>
-                                <option value="2004">2004</option>
-                                <option value="2005">2005</option>
-                                <option value="2006">2006</option>
-                                <option value="2007">2007</option>
-                                <option value="2008">2008</option>
-                                <option value="2009">2009</option>
-                                <option value="2010">2010</option>
                                 <option value="2011">2011</option>
                                 <option value="2012">2012</option>
                                 <option value="2013">2013</option>
@@ -238,68 +227,68 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">Ram | Rom</span>
                         </label>
-                        <textarea className="textarea textarea-bordered h-12"  {...register("ramRom", {
+                        <input className="file-input file-input-bordered w-full"  {...register("ramRom", {
                                 required: "Please Enter your product description"
-                            })}></textarea>
+                            })}></input>
                         {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
                     </div>
                   <div className="form-control">
                         <label className="label">
                             <span className="label-text">Processor</span>
                         </label>
-                        <textarea className="textarea textarea-bordered h-12"  {...register("processor", {
+                        <input className="file-input file-input-bordered w-full"  {...register("processor", {
                                 required: "Please Enter your product description"
-                            })}></textarea>
+                            })}></input>
                         {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
                   </div>
                   <div className="form-control">
                         <label className="label">
                             <span className="label-text">Camera</span>
                         </label>
-                        <textarea className="textarea textarea-bordered h-12"  {...register("camera", {
+                        <input className="file-input file-input-bordered w-full"  {...register("camera", {
                                 required: "Please Enter your product description"
-                            })}></textarea>
+                            })}></input>
                         {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
                     </div>
                   <div className="form-control">
                         <label className="label">
                             <span className="label-text">Sim</span>
                         </label>
-                        <textarea className="textarea textarea-bordered h-12"  {...register("sim")}></textarea>
+                        <input className="file-input file-input-bordered w-full"  {...register("sim")}></input>
                         {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
                     </div>
                   <div className="form-control">
                         <label className="label">
                             <span className="label-text">Screen</span>
                         </label>
-                        <textarea className="textarea textarea-bordered h-12"  {...register("screenSize")}></textarea>
+                        <input className="file-input file-input-bordered w-full"  {...register("screenSize")}></input>
                         {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
                     </div>
                   <div className="form-control">
                         <label className="label">
                             <span className="label-text">Scratch</span>
                         </label>
-                        <textarea className="textarea textarea-bordered h-12"  {...register("scratchStatus", {
+                        <input className="file-input file-input-bordered w-full"  {...register("scratchStatus", {
                                 required: "Please Enter your product description"
-                            })}></textarea>
+                            })}></input>
                         {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
                     </div>
                   <div className="form-control">
                         <label className="label">
                             <span className="label-text">Connectivity Issue</span>
                         </label>
-                        <textarea className="textarea textarea-bordered h-12"  {...register("connectivityIssue", {
+                        <input className="file-input file-input-bordered w-full"  {...register("connectivityIssue", {
                                 required: "Please Enter your product description"
-                            })}></textarea>
+                            })}></input>
                         {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
                     </div>
                   <div className="form-control">
                         <label className="label">
                             <span className="label-text">Battery Health</span>
                         </label>
-                        <textarea className="textarea textarea-bordered h-12"  {...register("batteryHealth", {
+                        <input className="file-input file-input-bordered w-full"  {...register("batteryHealth", {
                                 required: "Please Enter your product description"
-                            })}></textarea>
+                            })}></input>
                         {errors.description && <p className='text-red-500'>{errors.description?.message}</p>}
                     </div>
 

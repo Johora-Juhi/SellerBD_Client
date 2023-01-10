@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Scrollbars from 'react-custom-scrollbars';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import useAdmin from '../../hooks/useAdmin';
@@ -17,6 +18,7 @@ const DashboardLayout = () => {
             <Navbar></Navbar>
             <div className="drawer">
   <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" /> 
+  <Scrollbars style={{ width: '100vw', height: '100vh'}}>
   <div className="drawer-content w-3/4 mx-auto flex flex-col">
     <div className="w-full lg:flex justify-center border-y border-primary navbar bg-transparent">
       <div className="flex-none lg:hidden">
@@ -52,6 +54,8 @@ const DashboardLayout = () => {
     <Outlet></Outlet>
 
   </div> 
+      </Scrollbars>
+  
   <div className="drawer-side">
     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label> 
     <ul className="menu p-4 w-80 text-base-content">

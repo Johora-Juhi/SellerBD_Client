@@ -13,7 +13,7 @@ const SignUp = () => {
     const [signupError, setSignupError] = useState('');
     const navigate = useNavigate();
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const imageHostKey = process.env.REACT_APP_imgbb_Key;
+    const imageHostKey = "06a96b9d2399d36d63a76b7bd976bf8b";
     const [createdUserEmail, setCreatedUserEmail] = useState('');
     const [token] = useToken(createdUserEmail);
 
